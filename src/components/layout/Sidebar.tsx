@@ -69,9 +69,18 @@ export default function Sidebar() {
   }, [open]);
 
 
-  const menu = [
-    { name: "Dashboard", icon: <FaHome /> },
-    { name: "Product", icon: <FaBox /> },
+   const menu = [
+    { name: "Dashboard", icon: <FaHome />, path: "/dashboard" },
+    {
+      name: "Product",
+      icon: <FaBox />,
+      submenu: [
+        { name: "All Products", path: "/dashboard/products" },
+        { name: "Add Product", path: "/dashboard/products/add" },
+        { name: "Edit Product", path: "/dashboard/products/edit" },
+        { name: "Product Detail", path: "/dashboard/products/detail" }
+      ]
+    },
     { name: "Category", icon: <FaLayerGroup /> },
     { name: "Attributes", icon: <FaLayerGroup /> },
     { name: "Order", icon: <FaShoppingCart /> },
@@ -79,10 +88,11 @@ export default function Sidebar() {
     { name: "Store Setting", icon: <FaGlobe /> },
     { name: "Report", icon: <FaChartPie /> },
     { name: "Setting", icon: <FaCog /> },
-    { name: "Log Out", icon: <FaSignOutAlt /> },
+    { name: "Log Out", icon: <FaSignOutAlt /> }
   ];
+   
 
-  if (hidden) return null; // ✅ mobile hide
+  if (hidden) return null;
 
 
   return (

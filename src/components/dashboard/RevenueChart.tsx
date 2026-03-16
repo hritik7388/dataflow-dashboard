@@ -40,7 +40,7 @@ export default function RevenueChart() {
           Revenue
         </h3>
 
-       <select className="border rounded px-2 py-1 bg-gray-100 text-sm text-gray-500">
+        <select className="border rounded px-2 py-1 bg-gray-100 text-sm text-gray-500">
           <option>Yearly</option>
           <option>Weekly</option>
           <option>Monthly</option>
@@ -100,7 +100,7 @@ export default function RevenueChart() {
           <Bar
             dataKey="revenue"
             fill="#ff7a45"
-            radius={[4,4,0,0]}
+            radius={[4, 4, 0, 0]}
             barSize={18}
           />
 

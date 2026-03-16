@@ -8,18 +8,18 @@ import RecentOrders from "@/src/components/dashboard/RecentOrders";
 import UserLocation from "@/src/components/dashboard/UserLocation";
 
 import {
- FaDollarSign,
- FaShoppingBag,
- FaUser,
- FaWallet
+  FaDollarSign,
+  FaShoppingBag,
+  FaUser,
+  FaWallet
 } from "react-icons/fa";
 
 const chartData = [
- { value: 10 },
- { value: 40 },
- { value: 20 },
- { value: 60 },
- { value: 50 }
+  { value: 10 },
+  { value: 40 },
+  { value: 20 },
+  { value: 60 },
+  { value: 50 }
 ];
 
 export default function DashboardPage() {

@@ -105,17 +105,28 @@ export default function TopSales() {
 
             {/* PAGINATION */}
 
+            {/* PAGINATION */}
+
             <div className="flex items-center text-gray-900 justify-between mt-6">
 
-                <button
-                    disabled={page === 1}
-                    onClick={() => setPage(page - 1)}
-                    className="px-4 py-2 border text-gray-900 rounded-md disabled:opacity-40"
-                >
-                    Previous
-                </button>
+                <p className="text-sm text-gray-900">
+                    Showing {(page - 1) * pageSize + 1}–
+                    {Math.min(page * pageSize, orders.length)} of {orders.length}
+                </p>
 
-                <div className="flex gap-2">
+                <div className="flex items-center text-gray-900 gap-2">
+
+                    {/* LEFT */}
+
+                    <button
+                        disabled={page === 1}
+                        onClick={() => setPage(page - 1)}
+                        className="w-9 h-9 flex items-center justify-center rounded-full bg-gray-100 disabled:opacity-40"
+                    >
+                        ‹
+                    </button>
+
+                    {/* PAGE NUMBERS */}
 
                     {[...Array(totalPages)].map((_, i) => {
 
@@ -125,29 +136,30 @@ export default function TopSales() {
                             <button
                                 key={i}
                                 onClick={() => setPage(pageNumber)}
-                                className={`px-3 py-1 rounded-md border
-                                ${page === pageNumber
-                                        ? "bg-black text-white"
-                                        : "bg-white"}
-                                `}
+                                className={`w-9 h-9 flex items-center justify-center text-gray-900 rounded-full text-sm
+          ${page === pageNumber
+                                        ? "bg-[#ff7a45] text-white"
+                                        : "bg-gray-100 text-gray-900"
+                                    }`}
                             >
                                 {pageNumber}
                             </button>
                         )
                     })}
 
+                    {/* RIGHT */}
+
+                    <button
+                        disabled={page === totalPages}
+                        onClick={() => setPage(page + 1)}
+                        className="w-9 h-9 flex items-center text-gray-900 justify-center rounded-full bg-gray-100 disabled:opacity-40"
+                    >
+                        ›
+                    </button>
+
                 </div>
 
-                <button
-                    disabled={page === totalPages}
-                    onClick={() => setPage(page + 1)}
-                    className="px-4 py-2 border text-gray-900 rounded-md disabled:opacity-40"
-                >
-                    Next
-                </button>
-
             </div>
-
         </div>
 
     )
