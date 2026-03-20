@@ -1,3 +1,4 @@
+// src/components/products/productsTable.tsx
 "use client"
 
 import { useState } from "react"

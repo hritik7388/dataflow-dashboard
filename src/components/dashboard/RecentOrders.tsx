@@ -1,3 +1,4 @@
+// src/components/dashboard/RecentOrders.tsx
 "use client"
 
 import { useState } from "react"
@@ -57,7 +58,7 @@ export default function TopSales() {
 
                                 <td className="py-4 flex text-gray-900 items-center gap-3">
                                     <img
-                                        src="https://picsum.photos/40"
+                                        src="https://flagcdn.com/w40/gb.png"
                                         className="w-10 h-10 rounded-md"
                                     />
                                     {o.product}

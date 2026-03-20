@@ -1,3 +1,4 @@
+// src/app/dashboard/page.tsx
 "use client";
 
 import StatsCard from "@/src/components/dashboard/StatsCard";
@@ -96,11 +97,6 @@ export default function DashboardPage() {
         </div>
 
       </div>
-
-      {/* FOOTER */}
-      <footer className="bg-white  text-center py-6 text-sm text-gray-500">
-        © 2026 Dataflow Dashboard. All rights reserved.
-      </footer>
 
     </div>
   );

@@ -1,3 +1,4 @@
+// src/components/products/ProductDetailCard.tsx
 "use client"
 
 type Props = {

@@ -1,3 +1,4 @@
+// src/components/dashboard/PromotionalChart.tsx
 "use client"
 
 import { useState } from "react"

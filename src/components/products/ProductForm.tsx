@@ -1,3 +1,4 @@
+// src/components/products/ProductForm.tsx
 "use client"
 
 import { useState } from "react"

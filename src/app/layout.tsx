@@ -1,3 +1,4 @@
+// src/app/layout.tsx
 "use client";
 
 import "./globals.css";
@@ -29,12 +30,12 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <body className="bg-gray-100">
+      <body className="min-h-screen bg-gray-100">
 
         <Sidebar />
 
         <div
-          className="flex flex-col min-h-screen bg-gray-100 transition-all duration-300"
+          className="flex flex-col h-full-screen bg-gray-100 transition-all duration-300"
           style={{ marginLeft: sidebarWidth }}
         >
 
@@ -44,9 +45,19 @@ export default function RootLayout({
             {children}
           </main>
 
+
+
         </div>
 
+      {/* FOOTER */}
+      <footer className="bg-white justify-center flex  py-6 text-sm text-gray-900">
+        © 2026 Dataflow Dashboard. All rights reserved.
+      </footer>
+
+
       </body>
+      
+
     </html>
   );
 }

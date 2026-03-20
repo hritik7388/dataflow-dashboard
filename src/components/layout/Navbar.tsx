@@ -1,3 +1,4 @@
+// src/components/layout/Navbar.tsx
 "use client"
 
 import { FaBell, FaMoon } from "react-icons/fa"
