@@ -114,6 +114,8 @@ export default function ProductDetail() {
     "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab",
     "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab",
   ];
+  const [showReviewForm, setShowReviewForm] = useState(false)
+  const [rating, setRating] = useState(0)
 
   return (
     <div className="p-4 md:p-6 bg-gray-100 min-h-screen">
@@ -121,7 +123,7 @@ export default function ProductDetail() {
       <h1 className="text-xl md:text-2xl text-gray-900 font-bold mb-6">Add Product</h1>
 
       {/* ✅ ONLY CHANGE: grid-cols-5 */}
-      <div className="bg-white p-4 md:p-6 rounded-xl shadow-sm grid grid-cols-1 lg:grid-cols-5 gap-6 lg:gap-10">
+      <div className="bg-white p-4 md:p-10 rounded-xl shadow-sm grid grid-cols-1 lg:grid-cols-5 gap-6 lg:gap-10">
 
         {/* LEFT SIDE (STICKY IMAGES) */}
         {/* ✅ ONLY CHANGE: col-span-2 */}
@@ -209,7 +211,7 @@ export default function ProductDetail() {
               <p className="text-sm text-gray-900">Offer Ends in:</p>
             </div>
 
-          <div className="flex gap-4 text-center">
+            <div className="flex gap-4 text-center">
               {["days", "hours", "minutes", "seconds"].map((k) => (
                 <div key={k}>
                   <p className="font-bold">
@@ -241,8 +243,8 @@ export default function ProductDetail() {
           <div>
             <p className="mb-2 text-gray-900 ">Colors: <span className="font-medium text-gray-900 ">Gray</span></p>
             <div className="flex flex-wrap  gap-3">
-         {["orange-500","gray-400","purple-400","black","red-400","green-400"].map((c,i)=>(
-                <div key={i} className={`w-8 h-8 bg-${c} rounded-full`}/>
+              {["orange-500", "gray-900", "purple-400", "black", "red-400", "green-400"].map((c, i) => (
+                <div key={i} className={`w-8 h-8 bg-${c} rounded-full`} />
               ))}
             </div>
           </div>
@@ -251,12 +253,11 @@ export default function ProductDetail() {
           <div>
             <p className="mb-2 text-gray-900 ">Size: <span className="font-medium text-gray-900 ">L</span></p>
             <div className="flex flex-wrap gap-2 text-gray-900">
-              {["S","M","L","XL","XXL"].map((s)=>(
+              {["S", "M", "L", "XL", "XXL"].map((s) => (
                 <button
                   key={s}
-                  className={`px-4 py-2 border rounded-lg ${
-                    s==="L" ? "bg-orange-500 text-white" : ""
-                  }`}
+                  className={`px-4 py-2 border rounded-lg ${s === "L" ? "bg-orange-500 text-white" : ""
+                    }`}
                 >
                   {s}
                 </button>
@@ -277,28 +278,28 @@ export default function ProductDetail() {
           <hr />
 
           {/* BUTTONS */}
-          <div className="flex flex-col sm:flex-row items-center gap-4">
+          <div className="flex flex-col sm:flex-row items-center gap-2">
 
             {/* ADD TO CART */}
-            <button className="flex-1 bg-black text-white py-3 rounded-xl font-semibold border hover:bg-white hover:text-black">
+            <button className="flex-1 bg-black text-white py-1 rounded-xl font-semibold border hover:bg-white hover:text-black">
               ADD TO CART - $79.99
             </button>
 
             {/* 🔗 Share */}
             <div className="flex gap-3">
-            <div className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-300 cursor-pointer hover:border-orange-500 transition">
-              <TbExchange className="text-xl text-blue-700" />
-            </div>
-            {/* ❤️ Wishlist */}
-            <div className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-300 cursor-pointer hover:border-orange-500 transition">
-              <BsHeart className="text-xl text-red-900 hover:border-red-500 transition " />
-            </div>
+              <div className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-300 cursor-pointer hover:border-orange-500 transition">
+                <TbExchange className="text-xl text-blue-700" />
+              </div>
+              {/* ❤️ Wishlist */}
+              <div className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-300 cursor-pointer hover:border-orange-500 transition">
+                <BsHeart className="text-xl text-red-900 hover:border-red-500 transition " />
+              </div>
             </div>
 
 
           </div>
 
-          <button className="w-full bg-orange-500 text-white py-4 rounded-xl font-semibold">
+          <button className="w-full bg-orange-500 text-white py-2 rounded-xl font-semibold">
             BUY IT NOW
           </button>
 
@@ -365,7 +366,7 @@ export default function ProductDetail() {
       <div className="flex-row  bg-white rounded-xl p-6 md:p-10 p-30 shadow-sm">
 
         {/* TAB HEADINGS */}
-       <div className="flex flex-wrap gap-6 md:gap-10 justify-center text-sm md:text-xl font-semibold text-gray-600">
+        <div className="flex flex-wrap gap-6 md:gap-10 justify-center text-sm md:text-xl font-semibold text-gray-600">
           {[
             { key: "description", label: "Description" },
             { key: "reviews", label: "Customer Reviews" },
@@ -375,15 +376,13 @@ export default function ProductDetail() {
             <button
               key={tab.key}
               onClick={() => setActiveTab(tab.key)}
-              className={`relative pb-2 ${
-                activeTab === tab.key ? "text-black" : ""
-              }`}
+              className={`relative pb-2 ${activeTab === tab.key ? "text-black" : ""
+                }`}
             >
               {tab.label}
               <span
-                className={`absolute left-0 -bottom-1 h-[2px] bg-black transition-all ${
-                  activeTab === tab.key ? "w-full" : "w-0"
-                }`}
+                className={`absolute left-0 -bottom-1 h-[2px] bg-black transition-all ${activeTab === tab.key ? "w-full" : "w-0"
+                  }`}
               />
             </button>
           ))}
@@ -455,103 +454,157 @@ export default function ProductDetail() {
                 <div className="flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-10">
                   <div>
                     <h2 className="text-6xl font-bold text-black">4.9</h2>
-                <div className="text-orange-500 text-lg">
-  {"★".repeat(filledStars)}
-  {"☆".repeat(5 - filledStars)}
-</div>
+                    <div className="text-orange-500 text-lg">
+                      {"★".repeat(filledStars)}
+                      {"☆".repeat(5 - filledStars)}
+                    </div>
                     <p className="text-sm text-gray-500">(168 Ratings)</p>
                   </div>
 
-                  {/* PROGRESS BARS */}
+                  {/* PROGRESS */}
                   <div className="space-y-2 w-[300px]">
-                    {[
-                      { star: 5, value: 59 },
-                      { star: 4, value: 46 },
-                      { star: 3, value: 0 },
-                      { star: 2, value: 0 },
-                      { star: 1, value: 0 },
-                    ].map((item) => (
+                    {[{ star: 5, value: 59 }, { star: 4, value: 46 }, { star: 3, value: 0 }, { star: 2, value: 0 }, { star: 1, value: 0 }].map((item) => (
                       <div key={item.star} className="flex items-center gap-2 text-sm">
                         <span className="w-6">{item.star}★</span>
                         <div className="flex-1 h-2 bg-gray-200 rounded">
                           <div
                             className="h-2 bg-orange-500 rounded"
-                            style={{
-                              width: `${(item.value / 59) * 100}%`,
-                            }}
+                            style={{ width: `${(item.value / 59) * 100}%` }}
                           />
                         </div>
-                        <span className="w-6 text-right text-gray-600">
-                          {item.value}
-                        </span>
+                        <span className="w-6 text-right text-gray-600">{item.value}</span>
                       </div>
                     ))}
                   </div>
                 </div>
 
-                {/* WRITE REVIEW BUTTON */}
-                <button className="border border-orange-500 text-orange-500 px-2 py-2 h-[50px] rounded-lg hover:bg-orange-500 hover:text-white transition">
+                {/* BUTTON */}
+                <button
+                  onClick={() => setShowReviewForm(true)}
+                  className="border border-orange-500 text-orange-500 px-3 py-2 h-[50px] rounded-lg hover:bg-orange-500 hover:text-white transition"
+                >
                   Write a review
                 </button>
               </div>
 
-              {/* COMMENTS */}
-              <div className="space-y-8">
+              {/* 🔥 CONDITIONAL SECTION */}
+              {!showReviewForm ? (
+                /* ================= COMMENTS ================= */
+                <div className="space-y-8">
 
-                <h3 className="text-lg font-semibold text-black">03 Comments</h3>
+                  <h3 className="text-lg font-semibold text-black">03 Comments</h3>
 
-                {/* COMMENT ITEM */}
-                {[1, 2, 3].map((_, i) => (
-                  <div key={i} className="flex gap-4 md:gap-4">
+                  {[1, 2, 3].map((_, i) => (
+                    <div key={i} className="flex gap-4">
 
-                    {/* AVATAR */}
-                    <div className="w-10 h-10 md:w-10 md:h-10 rounded-full bg-gray-200 flex items-center justify-center">
-                      👤
-                    </div>
-
-                    {/* CONTENT */}
-                    <div className="flex-1 space-y-2">
-
-                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
-                        <h4 className="font-semibold text-black text-sm md:text-base">
-                          Superb quality apparel that exceeds expectations
-                        </h4>
-                        <span className="text-xs md:text-sm text-gray-500">1 days ago</span>
+                      <div className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center">
+                        👤
                       </div>
 
-                      <p className="text-sm text-gray-600 leading-relaxed">
-                        Great theme – we were looking for a theme with lots of built in
-                        features and flexibility and this was perfect. We expected to need
-                        to employ a developer to add a few finishing touches. But we
-                        actually managed to do everything ourselves.
-                      </p>
+                      <div className="flex-1 space-y-2">
 
-                      {/* REPLY */}
-                      {i === 0 && (
-                        <div className="flex gap-3 mt-4 pl-4 md:pl-6 border-l">
-
-                          <div className="w-6 h-6 md:w-8 md:h-8 rounded-full bg-gray-200 flex items-center justify-center">
-                            👤
-                          </div>
-
-                          <div>
-                            <p className="text-sm font-semibold text-black">
-                              Reply from Dataflow
-                            </p>
-                            <p className="text-xs text-gray-500 mb-1">1 days ago</p>
-                            <p className="text-sm text-gray-600">
-                              We love to hear it! Thank you for this fantastic review!
-                            </p>
-                          </div>
-
+                        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
+                          <h4 className="font-semibold text-black">
+                            Superb quality apparel that exceeds expectations
+                          </h4>
+                          <span className="text-sm text-gray-500">1 days ago</span>
                         </div>
-                      )}
 
+                        <p className="text-sm text-gray-600">
+                          Great theme – we were looking for a theme with lots of built in features.
+                        </p>
+
+                        {i === 0 && (
+                          <div className="flex gap-3 mt-4 pl-6 border-l">
+                            <div className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center">
+                              👤
+                            </div>
+                            <div>
+                              <p className="text-sm font-semibold text-black">
+                                Reply from Dataflow
+                              </p>
+                              <p className="text-xs text-gray-500">1 days ago</p>
+                              <p className="text-sm text-gray-600">
+                                We love to hear it!
+                              </p>
+                            </div>
+                          </div>
+                        )}
+
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
 
-              </div>
+                </div>
+              ) : (
+                /* ================= REVIEW FORM ================= */
+                <div className="border-t pt-10">
+
+                  <h3 className="text-lg font-semibold text-black mb-4">
+                    Write a review:
+                  </h3>
+
+                  {/* STARS */}
+                  <div className="flex gap-2 mb-6 text-2xl">
+                    {[1, 2, 3, 4, 5].map((star) => (
+                      <span
+                        key={star}
+                        onClick={() => setRating(star)}
+                        className={`cursor-pointer ${star <= rating ? "text-orange-500" : "text-gray-300"
+                          }`}
+                      >
+                        ★
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="space-y-5">
+
+                    <input
+                      placeholder="Give your review a title"
+                      className="w-full bg-gray-100 rounded-lg px-4 py-3 outline-none"
+                    />
+
+                    <textarea
+                      placeholder="Give your review"
+                      className="w-full bg-gray-100 rounded-lg px-4 py-3 h-[180px] outline-none"
+                    />
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <input
+                        placeholder="You Name (Public)"
+                        className="bg-gray-100 rounded-lg px-4 py-3 outline-none"
+                      />
+                      <input
+                        placeholder="Your email (private)"
+                        className="bg-gray-100 rounded-lg px-4 py-3 outline-none"
+                      />
+                    </div>
+
+                    <div className="flex items-center gap-2 text-sm text-gray-600">
+                      <input type="checkbox" />
+                      Save my info for next time
+                    </div>
+
+                    <div className="flex gap-3">
+                      <button className="bg-orange-500 text-white px-6 py-3 rounded-lg">
+                        Submit Reviews
+                      </button>
+
+                      {/* 🔥 BACK BUTTON */}
+                      <button
+                        onClick={() => setShowReviewForm(false)}
+                        className="border px-6 py-3 rounded-lg"
+                      >
+                        Cancel
+                      </button>
+                    </div>
+
+                  </div>
+
+                </div>
+              )}
+
             </div>
           )}
 
