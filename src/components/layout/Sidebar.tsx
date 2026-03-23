@@ -86,8 +86,20 @@ export default function Sidebar() {
         { name: "Add Category", path: "/dashboard/category/add-category" }, 
       ]
     },
-    { name: "Attributes", icon: <FaLayerGroup /> },
-    { name: "Order", icon: <FaShoppingCart /> },
+    { name: "Attributes", icon: <FaLayerGroup /> ,
+       submenu: [
+        { name: "All Attributes", path: "/dashboard/attributes" },
+        { name: "Add Attributes", path: "/dashboard/attributes/add-attributes" }, 
+      ]
+    },
+    { name: "Order", icon: <FaShoppingCart />,
+      submenu:[
+       { name:"Order's List",path:"dashboard/order"},
+       { name:"Order's Details",path:"dashboard/order-details"},
+       { name:"Order's Tracking",path:"dashboard/order-tacking"}
+
+      ]
+     },
     { name: "Users", icon: <FaUsers /> },
     { name: "Store Setting", icon: <FaGlobe /> },
     { name: "Report", icon: <FaChartPie /> },
