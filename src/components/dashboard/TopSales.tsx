@@ -1,4 +1,7 @@
+// src/components/dashboard/TopSales.tsx
 "use client";
+
+import { useEffect, useState } from "react";
 
 const products = [
   { name: "Neptune Longsleeve", price: "$138", percent: 10 },
@@ -9,6 +12,23 @@ const products = [
 ];
 
 export default function TopSales() {
+
+   const [progress, setProgress] = useState(
+    products.map(() => 0)
+  );
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setProgress((prev) =>
+        prev.map((val, i) =>
+          val < products[i].percent ? val + 1 : val
+        )
+      );
+    }, 15);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className="bg-white p-6 rounded-xl h-full shadow-sm">
 
@@ -57,7 +77,7 @@ export default function TopSales() {
 
               <div
                 className="bg-[#ff7a45] h-2 rounded-full"
-                style={{ width: `${p.percent}%` }}
+                style={{ width: `${progress[i]}%` }}
               />
 
             </div>

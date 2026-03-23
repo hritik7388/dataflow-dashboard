@@ -53,11 +53,12 @@ export default function ProductsPage() {
         </div>
 
         {/* CONTROLS */}
-        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-5">
+        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-1 mb-5">
 
-          <div className="flex flex-col sm:flex-row sm:items-center gap-4 md:gap-8 lg:gap-12">
+          {/* LEFT */}
+          <div className="flex flex-col sm:flex-row sm:items-center gap-4 w-full lg:w-auto">
 
-            <div className="flex items-center gap-2 text-sm text-gray-500">
+            <div className="flex items-center gap-2 text-sm text-gray-500 whitespace-nowrap">
               Showing
               <select className="bg-[#f5f6fa] px-2 py-1.5 rounded-md text-gray-900">
                 <option>10</option>
@@ -65,30 +66,31 @@ export default function ProductsPage() {
               entries
             </div>
 
-            <div className="relative w-full sm:w-auto">
+            <div className="relative w-full sm:w-[260px] md:w-[320px]">
               <FiSearch className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-700" />
               <input
                 placeholder="Search here..."
-                className="bg-[#f5f6fa] pl-10 pr-10 py-3 rounded-xl w-full sm:w-[300px] md:w-[360px] text-sm outline-none"
+                className="bg-[#f5f6fa] pl-10 pr-4 py-2.5 rounded-xl w-full text-sm outline-none"
               />
             </div>
           </div>
 
-          <div className="flex flex-wrap items-center gap-3 md:gap-4">
+          {/* RIGHT (FORCE SINGLE ROW) */}
+          <div className="flex flex-wrap lg:flex-nowrap items-center gap-2 md:gap-3 w-full lg:w-auto">
 
-            <select className="bg-[#f5f6fa] px-4 md:px-6 py-2 md:py-3 rounded-xl text-sm text-gray-600">
+            <select className="bg-[#f5f6fa] px-3 md:px-5 py-2 rounded-xl text-sm text-gray-600">
               <option>All Categories</option>
             </select>
 
-            <select className="bg-[#f5f6fa] px-4 md:px-6 py-2 md:py-3 rounded-xl text-sm text-gray-600">
+            <select className="bg-[#f5f6fa] px-3 md:px-5 py-2 rounded-xl text-sm text-gray-600">
               <option>All Status</option>
             </select>
 
-            <select className="bg-[#f5f6fa] px-4 md:px-6 py-2 md:py-3 rounded-xl text-sm text-gray-600">
+            <select className="bg-[#f5f6fa] px-3 md:px-5 py-2 rounded-xl text-sm text-gray-600">
               <option>Sort by (Default)</option>
             </select>
 
-            <button className="bg-orange-500 text-white px-5 md:px-8 py-2 md:py-3 rounded-xl text-[13px] md:text-[14px] font-semibold shadow-sm hover:bg-orange-600 transition">
+            <button className="bg-orange-500 text-white px-5 py-2 rounded-xl text-sm font-semibold shadow-sm hover:bg-orange-600 transition whitespace-nowrap">
               + Add new
             </button>
 
