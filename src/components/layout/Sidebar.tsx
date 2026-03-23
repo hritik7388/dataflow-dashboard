@@ -80,7 +80,12 @@ export default function Sidebar() {
          { name: "Product Detail", path: "/dashboard/products/productDetails" } 
       ]
     },
-    { name: "Category", icon: <FaLayerGroup /> },
+    { name: "Category", icon: <FaLayerGroup /> ,
+      submenu: [
+        { name: "All Category", path: "/dashboard/category" },
+        { name: "Add Category", path: "/dashboard/category/add-category" }, 
+      ]
+    },
     { name: "Attributes", icon: <FaLayerGroup /> },
     { name: "Order", icon: <FaShoppingCart /> },
     { name: "Users", icon: <FaUsers /> },
