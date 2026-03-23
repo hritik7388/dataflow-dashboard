@@ -141,7 +141,7 @@ export default function Sidebar() {
         </div>
 
         {/* MENU */}
-        <ul className="mt-4 flex flex-col gap-2">
+        <ul className="mt-1 flex flex-col ">
 
           {menu.map((item, i) => {
 
@@ -164,7 +164,7 @@ export default function Sidebar() {
                       router.push(item.path);
                     }
                   }}
-                  className={`flex items-center justify-between px-6 py-4 cursor-pointer transition
+                  className={`flex items-center justify-between px-6 py-5 cursor-pointer transition
                   ${(isParentActive || isSubActive)
                       ? "text-orange-500"
                       : "text-gray-700 hover:text-orange-500"}`}
@@ -191,7 +191,7 @@ export default function Sidebar() {
 
                 {/* SUBMENU */}
                 {item.submenu && open && openMenu === item.name && (
-                  <div className="ml-14 flex flex-col gap-3 pb-3">
+                  <div className="ml-7 flex flex-col gap-3 pb-1">
 
                     {item.submenu.map((sub, idx) => {
 
