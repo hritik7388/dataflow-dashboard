@@ -77,29 +77,32 @@ export default function Sidebar() {
         { name: "All Products", path: "/dashboard/products" },
         { name: "Add Product", path: "/dashboard/products/add" },
         { name: "Edit Product", path: "/dashboard/products/edit" },
-         { name: "Product Detail", path: "/dashboard/products/productDetails" } 
+        { name: "Product Detail", path: "/dashboard/products/productDetails" }
       ]
     },
-    { name: "Category", icon: <FaLayerGroup /> ,
+    {
+      name: "Category", icon: <FaLayerGroup />,
       submenu: [
         { name: "All Category", path: "/dashboard/category" },
-        { name: "Add Category", path: "/dashboard/category/add-category" }, 
+        { name: "Add Category", path: "/dashboard/category/add-category" },
       ]
     },
-    { name: "Attributes", icon: <FaLayerGroup /> ,
-       submenu: [
+    {
+      name: "Attributes", icon: <FaLayerGroup />,
+      submenu: [
         { name: "All Attributes", path: "/dashboard/attributes" },
-        { name: "Add Attributes", path: "/dashboard/attributes/add-attributes" }, 
+        { name: "Add Attributes", path: "/dashboard/attributes/add-attributes" },
       ]
     },
-    { name: "Order", icon: <FaShoppingCart />,
-      submenu:[
-       { name:"Order's List",path:"dashboard/order"},
-       { name:"Order's Details",path:"dashboard/order-details"},
-       { name:"Order's Tracking",path:"dashboard/order-tacking"}
+    {
+      name: "Order", icon: <FaShoppingCart />,
+      submenu: [
+        { name: "Order's List", path: "/dashboard/order" },
+        { name: "Order's Details", path: "/dashboard/order-details" },
+        { name: "Order's Tracking", path: "/dashboard/order-tacking" }
 
       ]
-     },
+    },
     { name: "Users", icon: <FaUsers /> },
     { name: "Store Setting", icon: <FaGlobe /> },
     { name: "Report", icon: <FaChartPie /> },
