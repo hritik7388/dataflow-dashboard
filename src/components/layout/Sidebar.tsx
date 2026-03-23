@@ -62,7 +62,7 @@ export default function Sidebar() {
 
     window.dispatchEvent(
       new CustomEvent("sidebarWidth", {
-        detail: open ? 270 : 80
+        detail: open ? 200 : 80
       })
     );
 
@@ -222,13 +222,13 @@ export default function Sidebar() {
 
         {/* SUPPORT */}
         {open && (
-          <div className="px-6 pb-8 border-t mt-6 pt-6">
+          <div className="px-6 pt-2">
 
-            <p className="text-gray-400 text-xs uppercase mb-4 tracking-wider">
+            <p className="text-gray-600 text-xs uppercase mb-4 tracking-wider">
               Support
             </p>
 
-            <div className="flex flex-col gap-4 text-[15px] text-gray-700">
+            <div className="flex flex-col gap-4 text-[12px] text-gray-900">
               <p className="hover:text-orange-500 cursor-pointer">
                 Terms & Conditions
               </p>

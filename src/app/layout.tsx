@@ -35,7 +35,7 @@ export default function RootLayout({
         <Sidebar />
 
         <div
-          className="flex flex-col h-full-screen bg-gray-100 transition-all duration-300"
+          className="flex flex-col min-full-screen bg-gray-100 transition-all duration-300"
           style={{ marginLeft: sidebarWidth }}
         >
 
@@ -47,16 +47,17 @@ export default function RootLayout({
 
 
 
+          {/* FOOTER */}
+          <footer className="bg-white flex justify-center py-6 text-sm text-gray-900">
+            © 2026 Dataflow Dashboard. All rights reserved.
+          </footer>
         </div>
 
-      {/* FOOTER */}
-      <footer className="bg-white justify-center flex  py-6 text-sm text-gray-900">
-        © 2026 Dataflow Dashboard. All rights reserved.
-      </footer>
+
 
 
       </body>
-      
+
 
     </html>
   );

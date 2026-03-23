@@ -8,7 +8,7 @@ import { HiOutlineViewGrid } from "react-icons/hi"
 export default function Navbar() {
 
   return (
-    <div className="bg-white border-b px-6 py-3 flex justify-between items-center sticky top-0 z-40">
+    <div className="bg-white border-b px-1 py-3 flex justify-between items-center sticky top-0 z-40">
 
       <div className="relative w-[320px]">
         <FiSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-lg" />
