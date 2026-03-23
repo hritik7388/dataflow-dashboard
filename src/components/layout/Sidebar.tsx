@@ -98,7 +98,7 @@ export default function Sidebar() {
       name: "Order", icon: <FaShoppingCart />,
       submenu: [
         { name: "Order's List", path: "/dashboard/order" },
-        { name: "Order's Details", path: "/dashboard/order-details" },
+        { name: "Order's Details", path: "/dashboard/order/order-details" },
         { name: "Order's Tracking", path: "/dashboard/order-tacking" }
 
       ]
@@ -116,7 +116,7 @@ export default function Sidebar() {
 
     <div
       className={`fixed left-0 top-0 h-screen bg-white border-r transition-all duration-300 flex flex-col
-      ${open ? "w-[270px]" : "w-[80px]"}`}
+      ${open ? "w-[200px]" : "w-[80px]"}`}
     >
 
       {/* SCROLL AREA */}
@@ -127,7 +127,7 @@ export default function Sidebar() {
 
           {open && (
             <h1 className="text-2xl font-bold text-gray-900 flex items-center gap-2">
-              <span className="text-orange-500 text-xl">❯❯</span> Dataflow
+              <span className="text-orange-500 text-base">❯❯</span> Dataflow
             </h1>
           )}
 
@@ -174,7 +174,7 @@ export default function Sidebar() {
                     <span className="text-xl">{item.icon}</span>
 
                     {open && (
-                      <span className="font-semibold text-[16px] tracking-wide">
+                      <span className="font-semibold text-[12px] tracking-wide">
                         {item.name}
                       </span>
                     )}

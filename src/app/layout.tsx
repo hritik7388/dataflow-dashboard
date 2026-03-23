@@ -13,7 +13,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
 
-  const [sidebarWidth, setSidebarWidth] = useState(270);
+  const [sidebarWidth, setSidebarWidth] = useState(200);
 
   useEffect(() => {
 
